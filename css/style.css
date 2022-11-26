@@ -1,3 +1,60 @@
 @charset "utf-8";
 
-/* -----ここから下に記述してください----- */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 20%;
+    height: 100vh;
+    padding-top: 30px;
+    text-align: center;
+}
+
+.site-name a {
+    font-size: 46px;
+    font-weight: bold;
+    color: #249eff;
+    font-family: 'EB Garamond';
+    background: linear-gradient(to right,
+            rgb(75, 116, 250) 25%,
+            rgb(192, 38, 223) 75%);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.logo {
+    width: 40px;
+    margin: 0 auto;
+}
+
+.sns-link {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.sns-link li {
+    width: 25px;
+}
+
+.sns-link li:nth-child(2) {
+    margin: 0 10px;
+}
+
+.nav {
+    position: absolute;
+    top: 25vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+}
+
+.nav a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    font-size: 22px;
+    margin-bottom: 30px;
+}
