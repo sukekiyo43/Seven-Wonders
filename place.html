@@ -12,58 +12,63 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body id="page-place">
+	<div class="wrapper">
+		<div class="contents">
+			<aside class="sidebar">
+				<h1 class="site-name">
+					<a href="./index.html">Travelin</a>
+				</h1>
+				<div class="logo"><img src="img/logo.png" alt="logo"></div>
+				<nav class="nav">
+					<a href="./place.html?id=1" class="is-active">Switzerland</a>
+					<a href="./place.html?id=2">Malaysia</a>
+					<a href="./place.html?id=3">USA</a>
+					<a href="./place.html?id=4">Iceland</a>
+					<a href="./place.html?id=5">indonesia</a>
+					<a href="./place.html?id=6">Japan</a>
+					<a href="./place.html?id=7">United Kingdom</a>
+					<a href="./place.html?id=8">Italia</a>
+				</nav>
+				<ul class="sns-link">
+					<li><a href="#"><img src="img/icon/twitter.png" alt="twitter"></a></li>
+					<li><a href="#"><img src="img/icon/instagram.png" alt="instagram"></a></li>
+					<li><a href="#"><img src="img/icon/facebook.png" alt="facebook"></a></li>
+				</ul>
+				<div class="sp-on" data-slide="prev"></div>
+				<div class="sp-on" data-slide="next"></div>
+			</aside>
 
-	<aside class="sidebar">
-		<h1 class="site-name">
-			<a href="./index.html">Travelin</a>
-		</h1>
-		<div class="logo"><img src="img/logo.png" alt=""></div>
-		<nav class="nav">
-			<a href="./place.html?id=1" class="is-active">Switzerland</a>
-			<a href="./place.html?id=2">Malaysia</a>
-			<a href="./place.html?id=3">USA</a>
-			<a href="./place.html?id=4">Iceland</a>
-			<a href="./place.html?id=5">indonesia</a>
-			<a href="./place.html?id=6">Japan</a>
-			<a href="./place.html?id=7">United Kingdom</a>
-			<a href="./place.html?id=8">Italia</a>
-		</nav>
-		<ul class="sns-link">
-			<li><a href="#"><img src="img/icon/twitter.png" alt="twitter"></a></li>
-			<li><a href="#"><img src="img/icon/instagram.png" alt="instagram"></a></li>
-			<li><a href="#"><img src="img/icon/facebook.png" alt="facebook"></a></li>
-		</ul>
-		<div class="sp-on" data-slide="prev"></div>
-		<div class="sp-on" data-slide="next"></div>
-	</aside>
+			<main class="main">
+				<section class="place">
+					<div class="place-img"><img src="" alt="place-img"></div>
+					<div class="place-info">
+						<h2 class="place-title"><span data-place="name"></span></h2>
+						<dl class="place-item">
+							<dt>Etymology</dt>
+							<dd data-place="Etymology"></dd>
+							<dt>History</dt>
+							<dd data-place="History"></dd>
+							<dt>Geography</dt>
+							<dd data-place="Geography"></dd>
+						</dl>
+						<div class="btn-wrap">
+							<a href="" target="_blank" class="btn btn--arrow" data-place="Wikipedia">Wikipedia</a>
+							<a href="" target="_blank" class="btn btn--arrow" data-place="travelsite">travel site</a>
+						</div>
+					</div>
+				</section>
 
-	<section class="place">
-		<div class="place-img"><img src="" alt="place-img"></div>
-		<div class="place-info">
-			<h2 class="place-title"><span data-place="name"></span></h2>
-			<dl class="place-item">
-				<dt>Etymology</dt>
-				<dd data-place="Etymology"></dd>
-				<dt>History</dt>
-				<dd data-place="History"></dd>
-				<dt>Geography</dt>
-				<dd data-place="Geography"></dd>
-			</dl>
-			<div class="btn-wrap">
-				<a href="" target="_blank" class="btn btn--arrow" data-place="Wikipedia">Wikipedia</a>
-				<a href="" target="_blank" class="btn btn--arrow" data-place="travelsite">travel site</a>
-			</div>
-		</div>
-	</section>
-
-	<div class="loader-wrap">
-		<div class="loader">
-			<div class="circle-1 circle">
-				<div class="circle-2 circle">
-					<div class="circle-3 circle"></div>
+				<div class="loader-wrap">
+					<div class="loader">
+						<div class="circle-1 circle">
+							<div class="circle-2 circle">
+								<div class="circle-3 circle"></div>
+							</div>
+						</div>
+					</div>
 				</div>
-			</div>
+			</main>
 		</div>
 	</div>
 
