@@ -50,6 +50,14 @@ $(function () {
     //下層ページのみ適応
     if ($('body').attr('id') === 'page-place') {
         $('.place-img img').attr('src', 'img/place/' + place_id + '.jpg');
+        let src = $("#src").attr('src');
+        console.log(src);
+        if (src === 'img/place/2.jpg') {
+            $('.place-img img').addClass('sp');
+        } else if (src === 'img/place/1.jpg' || src === 'img/place/7.jpg') {
+            $('.place-img img').addClass('sp2');
+        };
+
         $('[data-place]').each(function (index, el) {
             let place_key = $(this).attr('data-place');
 
@@ -64,4 +72,12 @@ $(function () {
         }, 1000)
     }
 
+    $(window).resize(function () {
+        if (window.matchMedia('(max-width:768px)').matches) {
+            setTimeout(function () {
+                location.reload();
+            }, 100);
+        }
+    });
 });
+

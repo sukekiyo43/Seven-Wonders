@@ -21,6 +21,30 @@ img {
     display: block;
 }
 
+/* スクロールバーカスタマイズ設定 */
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: rgb(156, 26, 130, .2);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: rgb(192, 38, 223, .6);
+}
+
+@-moz-document url-prefix() {
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: rgb(156, 26, 130, .5) rgb(192, 38, 223, .2);
+    }
+}
+
 @keyframes loader {
     from {
         transform: rotate(0deg);
@@ -53,23 +77,35 @@ img {
 .contents {
     position: relative;
     display: flex;
-    flex-wrap: wrap;
     font-family: 'Gentium Basic';
+    overflow: hidden;
 }
 
 /* サイドバー */
 
 .sidebar {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 20%;
+    width: 25%;
+    max-width: 320px;
+    min-width: 220px;
     height: 100vh;
-    padding-top: 30px;
+    height: 100dvh;
     text-align: center;
+    overflow-y: auto;
+}
+
+.site-name {
+    position: sticky;
+    padding-top: 25px;
+    padding: 25px 5px 25px;
+    top: 0;
+    background-color: #FFFFFF;
 }
 
 .site-name a {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     font-size: 46px;
     font-weight: bold;
     color: #249eff;
@@ -79,19 +115,34 @@ img {
             rgb(192, 38, 223) 75%);
     -webkit-background-clip: text;
     color: transparent;
+
+}
+
+.site-name a span {
+    line-height: 45px;
 }
 
 .logo {
-    width: 40px;
-    margin: 0 auto;
+    position: absolute;
+    width: 75px;
+    margin: auto;
+    opacity: .4;
+    top: -10px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
 }
 
 .sns-link {
-    position: absolute;
-    bottom: 60px;
-    left: 50%;
-    transform: translateX(-50%);
     display: flex;
+    justify-content: center;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 20px;
+    background-color: #FFFFFF;
 }
 
 .sns-link li {
@@ -103,11 +154,10 @@ img {
 }
 
 .nav {
-    position: absolute;
-    top: 25vh;
-    left: 50%;
-    transform: translateX(-50%);
     width: 100%;
+    height: auto;
+    margin: 30px 0;
+    overflow-y: auto;
 }
 
 .nav a {
@@ -124,7 +174,7 @@ img {
     position: relative;
     width: 100%;
     height: 100vh;
-    margin-left: 20%;
+    height: 100dvh;
 }
 
 .thumbnail {
@@ -179,12 +229,22 @@ img {
     transition: all .8s;
     transform: scale(1, 1);
     backface-visibility: hidden;
+    object-position: center top;
 }
+
 
 /* プレースコンテンツ */
 
+#page-place .wrapper {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
 .place {
     padding: 30px;
+    padding-left: 0;
+    padding-right: 10px;
     height: 100vh;
     display: flex;
 }
@@ -197,12 +257,17 @@ img {
 .place-img img {
     object-fit: cover;
     height: 100%;
+    object-position: top;
 }
 
 .place-info {
     margin-top: 20px;
     width: calc(100% - 45%);
     padding: 0 7% 3% 7%;
+    padding-left: 15px;
+    padding-right: 5px;
+    padding-right: 3%;
+    padding-left: 3%;
 }
 
 .place-title {
@@ -219,8 +284,11 @@ img {
 .place-item {
     margin-bottom: 10%;
     max-height: calc(100% - 30vh);
-    overflow: scroll;
-    padding: 30px 0;
+    overflow: auto;
+    padding: 30px 5px 0 0;
+    max-width: 900px;
+    margin: 0 auto;
+    margin-bottom: 20px;
 }
 
 .place-item dt {
@@ -244,7 +312,8 @@ img {
     position: relative;
     display: inline-block;
     border-radius: 5px;
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     padding: 15px 0;
     color: #fff;
     font-size: 20px;
@@ -352,10 +421,6 @@ img {
     transform-origin: 50% 0%;
 }
 
-.pc-on {
-    display: block;
-}
-
 .sp-on {
     display: none;
 }
@@ -364,27 +429,20 @@ img {
 /* スマホのみに適応 */
 @media screen and (max-width:768px) {
 
-    .pc-on {
-        display: none;
-    }
-
     .sp-on {
         display: block;
     }
-
-
 
     .contents {
         display: block;
     }
 
     .nav {
+        position: relative;
+        display: flex;
         height: 30px;
         width: 100%;
-        top: 45%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        overflow: scroll;
+        top: -8%;
     }
 
     .nav a {
@@ -421,6 +479,10 @@ img {
         width: 100%;
     }
 
+    .logo {
+        display: none;
+    }
+
     /* メインコンテンツsp */
 
     .main {
@@ -432,10 +494,21 @@ img {
     }
 
     .sidebar {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
         width: 100%;
+        max-width: initial;
+        min-width: initial;
         left: 50%;
         transform: translateX(-50%);
         z-index: 10;
+    }
+
+    .site-name {
+        background-color: initial;
     }
 
     .thumbnail {
@@ -455,15 +528,18 @@ img {
         transform: translateY(-50%);
         color: #fff;
         font-size: 30px;
+        cursor: pointer;
     }
 
     [data-slide="prev"] {
         left: 10px;
         display: none;
+        width: 40px;
     }
 
     [data-slide="next"] {
         right: 10px;
+        width: 40px;
     }
 
     /* プレースコンテンツsp */
@@ -479,6 +555,18 @@ img {
         height: 300px;
     }
 
+    .place-img img {
+        object-position: initial;
+    }
+
+    .place-img img.sp {
+        object-position: center 0;
+    }
+
+    .place-img img.sp2 {
+        object-position: center 30%;
+    }
+
     .place-info {
         width: auto;
     }
@@ -489,7 +577,7 @@ img {
     }
 
     #page-index .sns-link {
-        bottom: 18vh;
+        background-color: initial;
     }
 
     #page-place .main {
@@ -497,17 +585,27 @@ img {
     }
 
     #page-place .sidebar {
+        flex-direction: initial;
         background-color: #fff;
         height: 45px;
         padding-top: 0;
+        overflow-y: visible;
+        left: 0;
+        transform: none;
     }
+
 
     #page-place .site-name {
         position: absolute;
         left: 15px;
         top: 47%;
         transform: translateY(-50%);
+        padding: 0;
         z-index: 20;
+    }
+
+    #page-place .site-name a {
+        font-size: 24px;
     }
 
     #page-place .logo {
@@ -515,10 +613,12 @@ img {
     }
 
     #page-place .sns-link {
-        left: calc(100% - 15px);
-        bottom: 50%;
-        transform: translate(-100%, 50%);
-        display: flex;
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        padding: 0px;
+        width: fit-content;
+        height: fit-content;
     }
 
     #page-place .nav {
@@ -526,9 +626,10 @@ img {
         left: 0;
         display: flex;
         justify-content: space-between;
+        margin: 0;
         transform: translateX(0);
-        height: 45px;
-        line-height: 45px;
+        height: 55px;
+        line-height: 55px;
         background-color: #f3f3f3;
         -webkit-overflow-scrolling: touch;
         box-shadow: 1px 1px 2px #ccc inset;
@@ -537,12 +638,23 @@ img {
 
     #page-place .nav a {
         position: relative;
+        top: -5px;
         left: 0;
         opacity: 1;
-        padding: 0 20px;
+        margin: 0 20px;
         font-size: 18px;
         color: #333;
         transform: translateX(0);
+    }
+
+    #page-place .nav a.is-active::after {
+        display: none;
+    }
+
+    @media screen and (hover: none) and (pointer: coarse) {
+        #page-place .nav a {
+            top: 0;
+        }
     }
 
 
