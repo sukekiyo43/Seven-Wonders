@@ -4,7 +4,10 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Seven Wonders</title>
-	<meta name="viewport" content="width=device-width">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- noindex,nofollow設定 -->
+	<meta name="robots" content="noindex,nofollow">
+	<link rel="icon" href="./img/logo.png">
 	<link href="https://fonts.googleapis.com/css?family=EB+Garamond|Gentium+Basic&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/style.css">
@@ -14,30 +17,31 @@
 
 	<div class="wrapper">
 		<div class="contents">
-
 			<aside class="sidebar">
 				<h1 class="site-name">
 					<a href="./index.html"><span>Seven</span><span>Wonders</span>
 						<div class="logo"><img src="img/logo.png" alt=""></div>
 					</a>
 				</h1>
-				<nav class="nav">
-					<a href="./place.html?id=1" class="is-active">Pyramid</a>
-					<a href="./place.html?id=2">Christ Redeemer</a>
-					<a href="./place.html?id=3">Great wall of china</a>
-					<a href="./place.html?id=4">Machu Picchu</a>
-					<a href="./place.html?id=5">Petra</a>
-					<a href="./place.html?id=6">Colosseum</a>
-					<a href="./place.html?id=7">Taj Mahal</a>
-					<a href="./place.html?id=8">Chichen Itza</a>
-				</nav>
+				<div class="nav-box">
+					<nav class="nav">
+						<a href="./place.html?id=1" class="is-active">Pyramid</a>
+						<a href="./place.html?id=2">Christ Redeemer</a>
+						<a href="./place.html?id=3">Great wall of china</a>
+						<a href="./place.html?id=4">Machu Picchu</a>
+						<a href="./place.html?id=5">Petra</a>
+						<a href="./place.html?id=6">Colosseum</a>
+						<a href="./place.html?id=7">Taj Mahal</a>
+						<a href="./place.html?id=8">Chichen Itza</a>
+					</nav>
+					<div class="sp-on" data-slide="prev"><img src="img/icon/left-arrow.svg"></div>
+					<div class="sp-on" data-slide="next"><img src="img/icon/right-arrow.svg"></div>
+				</div>
 				<ul class="sns-link">
 					<li><a href="#"><img src="img/icon/twitter.png" alt="twitter"></a></li>
 					<li><a href="#"><img src="img/icon/instagram.png" alt="instagram"></a></li>
 					<li><a href="#"><img src="img/icon/facebook.png" alt="facebook"></a></li>
 				</ul>
-				<div class="sp-on" data-slide="prev"><img src="img/icon/left-arrow.svg"></div>
-				<div class="sp-on" data-slide="next"><img src="img/icon/right-arrow.svg"></div>
 			</aside>
 
 			<main class="main">
@@ -52,7 +56,6 @@
 					<li><a href="./place.html?id=8"><img src="img/place/8.jpg" alt="place-8"></a></li>
 				</ul>
 			</main>
-
 		</div>
 	</div>
 
